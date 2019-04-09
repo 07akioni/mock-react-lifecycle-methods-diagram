@@ -1,0 +1,166 @@
+body {
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+div.header {
+  text-align: center;
+  margin: 30px auto;
+  margin-left: 100px;
+  height: 71px;
+}
+
+.diagram-container {
+  display: grid;
+  border-radius: 4px;
+  grid-template-columns: minmax(86px,auto) minmax(144px,auto) minmax(75px,auto) minmax(52px,auto) minmax(75px,auto) minmax(148px,auto);;
+  grid-gap: 20px;
+  margin: auto;
+  max-width: 1080px;
+}
+
+.phase {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-bottom: 2px dotted #000;
+  margin-top: -10px;
+}
+.phase > h3 {
+  font-size: 1.17em;
+  font-weight: 400;
+  margin: 0;
+}
+.phase > p {
+  font-weight: 300;
+  max-width: 10em;
+  font-size: 14px;
+  margin: 5px auto 10px;
+}
+.phase.last {
+  border-bottom: none;
+}
+
+.section {
+  border: 1px solid #6a6a6a;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+}
+.section-title {
+  margin: 15px 20px 10px;
+  font-size: 24px;
+  text-align: center;
+  align-self: center;
+  font-weight: 400;
+}
+.section-highlighted {
+  border: 1px solid #6a6a6a;
+  background-color: #ffffff;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin-top: -10px;
+}
+
+ul {
+  display: contents;
+}
+
+.initiator {
+  list-style: none;
+}
+.initiator > h4 {
+  font-weight: 300;
+  line-height: 16px;
+  margin: 0;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+}
+.initiator > h4 > a {
+  color: #000000;
+  text-decoration: none;
+}
+.initiator > h4 > a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.method {
+  list-style: none;
+}
+.method.render {
+  --border-color: #6d8ac4;
+  --background-color: #d9e8fd;
+}
+.method.pre-commit {
+  --background-color: #fff2cd;
+  --border-color: #ceae5b;
+}
+.method.commit {
+  --background-color: #d6e7d5;
+  --border-color: #92b97c;
+}
+.method > a, span {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 8px 10px;
+  margin: 0 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+}
+.method > a:hover {
+  border: 2px solid var(--border-color);
+  background-color: #ffffff;
+  margin: -1px 19px;
+}
+
+.arrow {
+  border-left: 1px dashed #000000;
+  list-style: none;
+  width: 0;
+  position: relative;
+  left: 50%;
+  margin: -20px 0 -14px 0;
+}
+.with-alt .arrow {
+  position: absolute;
+  height: 20px;
+  transform: rotate(-30deg);
+  left: 4px;
+  top: 19px;
+}
+.with-alt .arrow::before {
+  position: absolute;
+  content: "❌";
+  transform: rotate(30deg);
+  bottom: -18px;
+  right: -21px;
+}
+.arrow.solid {
+  border-left: 1px solid #000000;
+  list-style: none;
+  width: 0;
+  position: relative;
+  margin: -20px 0 -14px 0; 
+}
+.arrow::after {
+  display: block;
+  position: absolute;
+  bottom: -6px;
+  left: -4px;
+  content: "";
+  width: 7px;
+  height: 10px;
+  background-color: #000000;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}

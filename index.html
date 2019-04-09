@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>grid</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="grid.css">
+  </head>
+  <body>
+    <div class="header"><h3>这是一个山寨的页面</h3></div>
+    <main class="diagram-container">
+      <div class="phase" style="grid-area: 3 / 1 / span 12 / 1"><h3>“Render 阶段”</h3><p>纯净且没有副作用。 可能会被 React 暂停，中止或重新启动。</p></div>
+      <div class="phase" style="grid-area: 15 / 1 / span 3 / auto;"><h3>“Pre-commit 阶段”</h3><p>可以读取 DOM。</p></div>
+      <div class="phase last" style="grid-area: 18 / 1 / span 6 / auto;"><h3>“Commit 阶段”</h3><p>可以使用DOM，运行副作用，安排更新。</p></div>
+      <div class="section" style="grid-area: 1 / 2 / span 23 / span 1"></div>
+      <div class="section" style="grid-area: 1 / 3 / span 23 / span 3"></div>
+      <div class="section" style="grid-area: 1 / 6 / span 23 / span 1"></div>
+      <div class="section-highlighted" style="grid-area: 16 / 2 / span 8 / span 1"></div>
+      <div class="section-highlighted" style="grid-area: 16 / 3 / span 8 / span 3"></div>
+      <div class="section-highlighted" style="grid-area: 16 / 6 / span 8 / span 1"></div>
+      <h3 class="section-title" style="grid-area: 1 / 2 / span 1 / span 1">创建时</h3>
+      <div data-section="mounting" style="display: contents">
+        <div class="arrow" style="grid-area: 2 / 2 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 5 / 2 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 8 / 2 / span 4 / span 1;"></div>
+        <div class="arrow" style="grid-area: 14 / 2 / span 4 / span 1;"></div>
+        <div class="arrow solid" style="grid-area: 19 / 2 / span 2 / span 1;"></div>
+      </div>
+      <div data-section="updating" style="display: contents">
+        <div class="arrow solid" style="grid-area: 17 / 4 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 14 / 4 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 5 / 3 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 5 / 4 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 5 / 5 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 8 / 3 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 8 / 4 / span 1 / span 1;"></div>
+        <div class="arrow" style="grid-area: 8 / 5 / span 4 / span 1;"></div>
+        <div class="arrow with-alt" style="grid-area: 11 / 3 / 12 / span 2;">
+          <div class="arrow" style="grid-area: 11 / 3 / 12 / span 1;"></div>
+        </div>
+        <div class="arrow solid" style="grid-area: 20 / 4 / span 1 / span 1;"></div>
+      </div>
+      <div data-section="unmounting" style="display: contents">
+        <div class="arrow" style="grid-area: 2 / 6 / 21 / span 1;"></div>
+      </div>
+      <ul>
+        <li class="initiator" style="grid-area: 3 / 3 / span 2 / auto;"><h4 style="font-style: italic; padding-right: 0;">New props</h4></li>
+        <li class="initiator" style="grid-area: 3 / 4 / span 2 / auto;"><h4 style="padding-left: 0; padding-right: 0;"><a href="https://reactjs.org/docs/react-component.html#setstate">setState()</a></h4></li>
+        <li class="initiator" style="grid-area: 3 / 5 / span 2 / auto;"><h4 style="padding-left: 0;"><a href="https://reactjs.org/docs/react-component.html#forceupdate">forceUpdate()</a></h4></li>
+        <li class="method render" style="grid-area: 3 / 2 / span 2 / span 1;"><a style="font-weight: 600" href="https://reactjs.org/docs/react-component.html#constructor">constructor</a></li>
+        <li class="method render" style="grid-area: 6 / 2 / span 2 / span 4;"><a href="https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops">getDerivedStateFromProps</a></li>
+        <li class="method render" style="grid-area: 12 / 2 / span 2 / span 4;"><a href="https://reactjs.org/docs/react-component.html#render" style="font-weight: 600;">render</a></li>
+        <li class="method render" style="grid-area: 9 / 3 / span 2 / span 2;"><a style="margin-right: 0;" href="https://reactjs.org/docs/react-component.html#shouldcomponentupdate">shouldComponentUpdate</a></li>
+      </ul>
+      <ul>
+        <li class="method pre-commit" style="grid-area: 15 / 3 / span 2 / span 3;"><a href="https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate">getSnapshotBeforeUpdate</a></li>
+        <li class="method pre-commit" style="grid-area: 18 / 2 / span 2 / span 4;"><span style="font-style: italic;">React 更新 ­D­O­M 和 refs</span></li>
+      </ul>
+      <ul>
+        <li class="method commit" style="grid-area: 21 / 2 / span 2 / auto"><a style="font-weight: 600;" href="https://reactjs.org/docs/react-component.html#componentdidmount">componentDidMount</a></li>
+        <li class="method commit" style="grid-area: 21 / 3 / span 2 / span 3"><a style="font-weight: 600;" href="https://reactjs.org/docs/react-component.html#componentdidupdate">componentDidUpdate</a></li>
+        <li class="method commit" style="grid-area: 21 / 6 / span 2 / auto"><a style="font-weight: 600;" href="https://reactjs.org/docs/react-component.html#componentwillunmount">componentWillUnmount</a></li>
+      </ul>
+      <h3 class="section-title" style="grid-area: 1 / 3 / span 1 / span 3;">更新时</h3>
+      <h3 class="section-title" style="grid-area: 1 / 6 / span 1 / span 1;">卸载时</h3>
+    </main>
+  </body>
+</html>
